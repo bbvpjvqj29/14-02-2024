@@ -2,9 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis & Sofía 💖</title>
-
+<title>Para Luis 💫</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -15,34 +13,6 @@ body {
   font-family: 'Cormorant Garamond', serif;
   color: white;
   text-align: center;
-}
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-}
-
-h1 { font-size: 28px; }
-
-button {
-  font-size: 20px;
-  padding: 14px 28px;
-  margin: 10px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-}
-
-#si { background: white; color: black; }
-
-#no {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  position: absolute;
 }
 
 .star {
@@ -56,6 +26,28 @@ button {
 @keyframes twinkle {
   from { opacity: 0.2; }
   to { opacity: 1; }
+}
+
+.container {
+  position: relative;
+  top: 40vh;
+}
+
+button {
+  font-size: 20px;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#si { background: white; color: black; }
+#no {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  position: absolute;
 }
 </style>
 </head>
@@ -72,7 +64,7 @@ button {
 
 <script>
 // estrellas
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 120; i++) {
   const star = document.createElement("div");
   star.className = "star";
   star.style.top = Math.random() * 100 + "vh";
@@ -80,7 +72,7 @@ for (let i = 0; i < 80; i++) {
   document.body.appendChild(star);
 }
 
-// botón no huye
+// botón no escapa
 const noBtn = document.getElementById("no");
 noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = Math.random() * 80 + "vh";
