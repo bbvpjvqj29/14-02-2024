@@ -1,99 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Para Luis 💫</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi 14 de febrero?</title>
 
-<style>
-body {
-  margin: 0;
-  background: radial-gradient(circle at bottom, #0b0f2a, #000);
-  overflow: hidden;
-  font-family: 'Cormorant Garamond', serif;
-  color: white;
-  text-align: center;
-}
+  <style>
+    body {
+      background: linear-gradient(#0b0c2a, #1a1b4b);
+      color: white;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  animation: twinkle 2s infinite alternate;
-}
+    h1 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
 
-@keyframes twinkle {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
-}
+    .botones {
+      position: relative;
+    }
 
-.container {
-  position: relative;
-  top: 40vh;
-}
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
 
-button {
-  font-size: 20px;
-  padding: 12px 24px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-}
+    #si {
+      background-color: #ff4d88;
+      color: white;
+    }
 
-#si { background: white; color: black; }
-#no {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  position: absolute;
-}
-</style>
+    #no {
+      background-color: #999;
+      color: white;
+      position: absolute;
+    }
+
+    .mensaje {
+      display: none;
+      margin-top: 30px;
+      font-size: 18px;
+      max-width: 300px;
+    }
+
+    a {
+      color: #ffd1e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-<iframe id="spotify" style="display:none;" width="0" height="0"></iframe>
+  <h1>¿Quieres ser mi 14 de febrero, Luis? 💖</h1>
 
-<div class="container">
-  <h1>¿Quieres ser mi 14 de febrero? 💖</h1>
-  <button id="si">Sí 💘</button>
-  <button id="no">No 🙈</button>
-</div>
+  <div class="botones">
+    <button id="si">Sí 💘</button>
+    <button id="no">No 😢</button>
+  </div>
 
-<script>
-// estrellas
-for (let i = 0; i < 120; i++) {
-  const star = document.createElement("div");
-  star.className = "star";
-  star.style.top = Math.random() * 100 + "vh";
-  star.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(star);
-}
+  <div class="mensaje" id="mensaje">
+    💌 Tendrás que esperar al 14 para ver tu sorpresa 💌
+  </div>
 
-// botón no escapa
-const noBtn = document.getElementById("no");
-noBtn.addEventListener("mouseover", () => {
-  noBtn.style.top = Math.random() * 80 + "vh";
-  noBtn.style.left = Math.random() * 80 + "vw";
-});
+  <script>
+    const botonNo = document.getElementById("no");
+    const botonSi = document.getElementById("si");
+    const mensaje = document.getElementById("mensaje");
 
-// botón sí
-document.getElementById("si").addEventListener("click", () => {
-  document.getElementById("spotify").src =
-    "https://open.spotify.com/embed/track/0Xm7WesKiHAAbLYluGqBZ7?autoplay=1";
+    // Botón NO se escapa
+    botonNo.addEventListener("mouseover", () => {
+      const ancho = window.innerWidth - botonNo.offsetWidth;
+      const alto = window.innerHeight - botonNo.offsetHeight;
 
-  document.querySelector(".container").innerHTML = `
-    <h1>Sabía que dirías que sí 💫</h1>
-    <p>Mañana hay una sorpresa esperándote…</p>
-  `;
+      const nuevaX = Math.random() * ancho;
+      const nuevaY = Math.random() * alto;
 
-  setTimeout(() => {
-    window.location.href = "sanvalentin.html";
-  }, 4000);
-});
-</script>
+      botonNo.style.left = nuevaX + "px";
+      botonNo.style.top = nuevaY + "px";
+    });
+
+    // Botón SÍ
+    botonSi.addEventListener("click", () => {
+      const hoy = new Date();
+      const es14 = hoy.getDate() === 14 && hoy.getMonth() === 1;
+
+      if (es14) {
+        // Ir al cupón el 14
+        window.location.href = "cupon.html";
+      } else {
+        mensaje.style.display = "block";
+      }
+    });
+  </script>
 
 </body>
 </html>
