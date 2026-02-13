@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cupón de Amor</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe5ec;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.cupon {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+<div class="cupon">
+  <h2>🎟️ Cupón de Amor</h2>
+  <p id="mensaje">Cargando...</p>
+  <button id="botonCarta" onclick="irACarta()" style="display:none;">
+    Abrir carta 💌
+  </button>
+</div>
+
+<script>
+const hoy = new Date();
+const dia = hoy.getDate();
+const mes = hoy.getMonth() + 1;
+
+if (dia === 14 && mes === 2) {
+  document.getElementById("mensaje").innerText =
+    "Puedes abrir tu cupón 💖";
+  document.getElementById("botonCarta").style.display = "inline-block";
+} else {
+  document.getElementById("mensaje").innerText =
+    "Este cupón solo puede abrirse el 14 de febrero 💕";
+}
+
+function irACarta() {
+  window.location.href = "carta.html";
+}
+</script>
+</body>
+</html>
