@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta para ti</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 30px;
+  background: #fff0f5;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<h2>💌 Para ti</h2>
+
+<p>
+Hoy solo quiero recordarte lo especial que eres para mí.
+Gracias por cada sonrisa, cada momento y cada instante compartido.
+</p>
+
+<p>
+Eres mi lugar favorito, mi paz y mi alegría.
+Y si pudiera elegir de nuevo, te elegiría a ti una y mil veces más.
+</p>
+
+<p>
+Feliz 14 de febrero 💖
+</p>
+
+</body>
+</html>
